@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/management.css">
+    <script src="https://kit.fontawesome.com/87b021b4fa.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="title">
+                <img src="images/logos.jpg" alt="" width="50px"
+                height="50px">
+                <h2>Gen X Gym</h2>
+                <button id="cls-btn">&times;</button>
+            </div>
+            <div class="menu">
+                <h2>Menu</h2>
+            </div>
+            <div class="menu-list">
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="management.html">Members List</a></li>
+                    <li><a href="staff.html">Staffs</a></li>
+                    <li><a href="gymPackage.html">Package</a></li>
+                    <li><a href="addEvent.html">Announcement</a></li>
+                    <li><a href="">Location</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="main">
+            <div class="header">
+                <div class="right-btn btn">
+                    <button id="sb-btn" style="font-size:2rem;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 -1.5 15 15"><path fill="currentColor" fill-rule="evenodd" d="M1.5 3a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1zM1 7.5a.5.5 0 0 1 .5-.5h12a.5.5 0 0 1 0 1h-12a.5.5 0 0 1-.5-.5m0 4a.5.5 0 0 1 .5-.5h12a.5.5 0 0 1 0 1h-12a.5.5 0 0 1-.5-.5" clip-rule="evenodd"/></svg></button>
+                    <h2>Dashboard</h2>
+                </div>
+                <div class="search">
+                    <form action="">
+                        <input type="search" placeholder="Search something">
+                        <button type="submit" class="submit"><svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1em" viewBox="0 0 20 17"><path fill="white" d="m19.6 21l-6.3-6.3q-.75.6-1.725.95T9.5 16q-2.725 0-4.612-1.888T3 9.5t1.888-4.612T9.5 3t4.613 1.888T16 9.5q0 1.1-.35 2.075T14.7 13.3l6.3 6.3zM9.5 14q1.875 0 3.188-1.312T14 9.5t-1.312-3.187T9.5 5T6.313 6.313T5 9.5t1.313 3.188T9.5 14"/></svg></button>
+                    </form>
+                </div>
+                <div class="left-btn btn">
+                    <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M21 19v1H3v-1l2-2v-6c0-3.1 2.03-5.83 5-6.71V4a2 2 0 0 1 2-2a2 2 0 0 1 2 2v.29c2.97.88 5 3.61 5 6.71v6zm-7 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2"/></svg></a>
+                    <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="-2 -5 24 24"><path fill="currentColor" d="M18.572.083L10.676 7.12a1 1 0 0 1-1.331 0L1.416.087A2 2 0 0 1 2 0h16a2 2 0 0 1 .572.083m1.356 1.385c.047.17.072.348.072.532v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 .072-.534l7.942 7.148a3 3 0 0 0 3.992 0z"/></svg></a>
+                    <a href="">Profile</a>
+                    <img src="images/profile-user.png" alt="" width="35px">
+                </div>
+            </div>
+            <div class="content">
+                <div class="user-table">
+                    <div class="left-tbl tbl">
+                        <div class="tbl-title">
+                            <div class="r-title">
+                                <p>Member List</p>
+                                <button id="open-modal">add member</button>
+                                <dialog id="modal" class="add-dialog">
+                                    <form action="">
+                                        <p>Personal Informations</p>
+                                        <label for="">Firstname</label>
+                                        <input type="text">
+                                        <label for="">Lastname</label>
+                                        <input type="text">
+                                        <p>Contact Informations</p>
+                                        <label for="">Email</label>
+                                        <input type="text">
+                                        <label for="">Contact</label>
+                                        <input type="text">
+
+                                        <div class="form-btn">
+                                            <button id="close-modal" formmethod="dialog" class="cancel-btn">Back</button>
+                                            <button>Submit</button>
+                                        </div>
+                                    </form>
+                                </dialog>
+                            </div>
+                            <div class="search-member">
+                                <form action="">
+                                    <input type="search">
+                                    <button type="submit">Search</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="table-container">
+                            <table>
+                                <tr>
+                                    <th style="width:10%">ID</th>
+                                    <th>&times;</th>
+                                    <th>Firstname</th>
+                                    <th>Lastname</th>
+                                    <th>Email</th>
+                                    <th>Email</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td><img src="images/profile-user.png" alt="" width="30px"></td>
+                                    <td>Elva</td>
+                                    <td>Copeland</td>
+                                    <td>Copeland@gmail.com</td>
+                                    <td><a href="#" class="del-btn" id="del-dia-btn">Delete</a>&nbsp;<a href="" class="upd-btn">Update</a></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td><img src="images/profile-user.png" alt="" width="30px"></td>
+                                    <td>Sophia</td>
+                                    <td>Park</td>
+                                    <td>Park@gmail.com</td>
+                                    <td><a href="#" class="del-btn" id="del-dia-btn">Delete</a>&nbsp;<a href="" class="upd-btn">Update</a></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td><img src="images/profile-user.png" alt="" width="30px"></td>
+                                    <td>Lois</td>
+                                    <td>Tate</td>
+                                    <td>Tate@gmail.com</td>
+                                    <td><a href="#" class="del-btn" >Delete</a>&nbsp;<a href="" class="upd-btn">Update</a></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td><img src="images/profile-user.png" alt="" width="30px"></td>
+                                    <td>Cordelia</td>
+                                    <td>Hoffman</td>
+                                    <td>Hoffman@gmail.com</td>
+                                    <td><a href="#" class="del-btn" >Delete</a>&nbsp;<a href="" class="upd-btn">Update</a></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td><img src="images/profile-user.png" alt="" width="30px"></td>
+                                    <td>Sophia</td>
+                                    <td>Kim</td>
+                                    <td>Kim@gmail.com</td>
+                                    <td><a href="#" class="del-btn" >Delete</a>&nbsp;<a href="" class="upd-btn">Update</a></td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td><img src="images/profile-user.png" alt="" width="30px"></td>
+                                    <td>Mason</td>
+                                    <td>Nunez</td>
+                                    <td>Nunez@gmail.com</td>
+                                    <td><a href="#" class="del-btn" >Delete</a>&nbsp;<a href="" class="upd-btn">Update</a></td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td><img src="images/profile-user.png" alt="" width="30px"></td>
+                                    <td>Brian</td>
+                                    <td>Norton</td>
+                                    <td>Norton@gmail.com</td>
+                                    <td><a href="#" class="del-btn" >Delete</a>&nbsp;<a href="" class="upd-btn">Update</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <dialog id="del-modal">
+                            <form action="">
+                                <h1>Are you sure to delete?</h1>
+                                <div class="del-c-btn">
+                                    <button id="del-cncl">Cancel</button>
+                                    <button>Delete</button>
+                                </div>
+                            </form>
+                        </dialog>
+                    </div>
+                    <div class="right-tbl tbl">
+                        <div class="r-title recent-title">
+                            <p>Recent Users</p>
+                        </div>
+                        <div class="recent-users">
+                            <div class="user-prof">
+                                <div class="user-img">
+                                    <div class="imgs">
+                                        <img src="images/woman.png" alt="" width="40px">
+                                    </div>
+                                    <div class="user-info">
+                                        <p>Nancy Rodriguez</p>
+                                        <p class="st-p">20 mins ago</p>
+                                    </div>
+                                </div>
+                                <div class="view-btn">
+                                    <button>VIEW</button>
+                                </div>
+                            </div>
+                            <div class="user-prof">
+                                <div class="user-img">
+                                    <div class="imgs">
+                                        <img src="images/model.png" alt="" width="40px">
+                                    </div>
+                                    <div class="user-info">
+                                        <p>Nancy Rodriguez</p>
+                                        <p class="st-p">20 mins ago</p>
+                                    </div>
+                                </div>
+                                <div class="view-btn">
+                                    <button>VIEW</button>
+                                </div>
+                            </div>
+                            <div class="user-prof">
+                                <div class="user-img">
+                                    <div class="imgs">
+                                        <img src="images/man.png" alt="" width="40px">
+                                    </div>
+                                    <div class="user-info">
+                                        <p>Nancy Rodriguez</p>
+                                        <p class="st-p">20 mins ago</p>
+                                    </div>
+                                </div>
+                                <div class="view-btn">
+                                    <button>VIEW</button>
+                                </div>
+                            </div>
+                            <div class="user-prof">
+                                <div class="user-img">
+                                    <div class="imgs">
+                                        <img src="images/face.png" alt="" width="40px">
+                                    </div>
+                                    <div class="user-info">
+                                        <p>Nancy Rodriguez</p>
+                                        <p class="st-p">20 mins ago</p>
+                                    </div>
+                                </div>
+                                <div class="view-btn">
+                                    <button>VIEW</button>
+                                </div>
+                            </div>
+                            <div class="user-prof">
+                                <div class="user-img">
+                                    <div class="imgs">
+                                        <img src="images/emoji.png" alt="" width="40px">
+                                    </div>
+                                    <div class="user-info">
+                                        <p>Nancy Rodriguez</p>
+                                        <p class="st-p">20 mins ago</p>
+                                    </div>
+                                </div>
+                                <div class="view-btn">
+                                    <button>VIEW</button>
+                                </div>
+                            </div>
+                            <div class="rec-btn">
+                                <a href="">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="left-tbl tbl">
+                    <div class="tbl-title">
+                        <div class="r-title">
+                            <p>Members Informations</p>
+                        </div>
+                        <div class="search-member">
+                            <form action="">
+                                <input type="search">
+                                <button type="submit">Search</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <tr>
+                                <th style="width:5%">ID</th>
+                                <th>&times;</th>
+                                <th>Firstname</th>
+                                <th>Lastname</th>
+                                <th>Date join</th>
+                                <th>Payment Status</th>
+                                <th>Status</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td><img src="images/profile-user.png" alt="" width="30px"></td>
+                                <td>Elva</td>
+                                <td>Copeland</td>
+                                <td>12/3/2024</td>
+                                <td>Pending</td>
+                                <td><a href="" class="upd-btn upd">Active</a></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><img src="images/profile-user.png" alt="" width="30px"></td>
+                                <td>Sophia</td>
+                                <td>Park</td>
+                                <td>12/3/2024</td>
+                                <td>Pending</td>
+                                <td><a href="" class="del-btn del">Inactive</a></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td><img src="images/profile-user.png" alt="" width="30px"></td>
+                                <td>Lois</td>
+                                <td>Tate</td>
+                                <td>12/3/2024</td>
+                                <td>Pending</td>
+                                <td><a href="" class="upd-btn upd">Active</a></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td><img src="images/profile-user.png" alt="" width="30px"></td>
+                                <td>Cordelia</td>
+                                <td>Hoffman</td>
+                                <td>12/3/2024</td>
+                                <td>Pending</td>
+                                <td><a href="" class="upd-btn upd">Active</a></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td><img src="images/profile-user.png" alt="" width="30px"></td>
+                                <td>Sophia</td>
+                                <td>Kim</td>
+                                <td>12/3/2024</td>
+                                <td>Pending</td>
+                                <td><a href="" class="upd-btn upd">Active</a></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td><img src="images/profile-user.png" alt="" width="30px"></td>
+                                <td>Mason</td>
+                                <td>Nunez</td>
+                                <td>12/3/2024</td>
+                                <td>Pending</td>
+                                <td><a href="" class="del-btn del">Inactive</a></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td><img src="images/profile-user.png" alt="" width="30px"></td>
+                                <td>Brian</td>
+                                <td>Norton</td>
+                                <td>12/3/2024</td>
+                                <td>Pending</td>
+                                <td><a href="" class="del-btn del">Inactive</a></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <p>Generation X Gym</p>
+            </div>
+        </div>
+    </div>
+    <script src="script/modal.js"></script>
+    <script src="script/script.js"></script>
+</body>
+</html>
